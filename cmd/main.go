@@ -23,6 +23,7 @@ func main() {
 
 	info := getEnvInfo()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Printf("requested: (%s) %s %s\n", time.Now().Format(time.RFC3339), r.Method, r.URL.Path)
 		fmt.Fprintf(w, "requested: %s %s\n%s", r.Method, r.URL.Path, info)
 	})
 	log.Print("using port ", port)

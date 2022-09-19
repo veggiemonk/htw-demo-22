@@ -6,7 +6,9 @@ pushd "$ROOT_DIR" || { echo "could not change to root directory: $ROOT_DIR"; exi
 
 IMG=$(< _IMG)
 
-kubectl create deployment srv --image="$IMG" --dry-run=client -o yaml > deployment.yaml
-kubectl create service clusterip srv --tcp=8080:8080 --dry-run=client -o yaml > service.yaml
+pushd deploy
 
-kustomize build . -o final.yaml
+kubectl create deployment srv --image="$IMG" --dry-run=client -o yaml > ./deployment.yaml
+kubectl create service clusterip srv --tcp=8080:8080 --dry-run=client -o yaml > ./service.yaml
+
+kustomize build . -o ./final.yaml

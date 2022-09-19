@@ -4,6 +4,8 @@ set -euxo pipefail # see https://gist.github.com/mohanpedala/1e2ff5661761d3abd03
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
 pushd "$ROOT_DIR" || { echo "could not change to root directory: $ROOT_DIR"; exit 1; }
 
-go build -o srv
+go build -o bin/srv ./...
 
-docker build -t srv -f srv.Dockerfile . 
+docker build -t srv -f build/srv.Dockerfile . 
+
+docker images

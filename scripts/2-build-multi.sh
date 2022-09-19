@@ -5,4 +5,7 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
 pushd "$ROOT_DIR" || { echo "could not change to root directory: $ROOT_DIR"; exit 1; }
 
 
-docker build -t srvmulti -f multi.Dockerfile . 
+docker build -t srvmulti -f build/multi.Dockerfile . 
+
+docker images
+

@@ -1,11 +1,11 @@
-srv
+bin/srv
 
 _*
 
 manifest.yaml
-deployment.yaml
-service.yaml
-final.yaml
+deploy/deployment.yaml
+deploy/service.yaml
+deploy/final.yaml
 
 # Binaries for programs and plugins
 *.exe

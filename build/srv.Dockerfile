@@ -2,6 +2,6 @@ FROM golang
 
 WORKDIR /app
 
-COPY srv /app 
+COPY bin/srv /app 
 
 ENTRYPOINT ["/app/srv"]

@@ -1,7 +1,7 @@
 FROM golang:alpine as builder
 
-ADD ./go.mod /go/src/github.com/veggiemonk/htw-demo-22/go.mod
-ADD ./main.go /go/src/github.com/veggiemonk/htw-demo-22/main.go
+COPY ./go.mod /go/src/github.com/veggiemonk/htw-demo-22/go.mod
+COPY ./cmd/main.go /go/src/github.com/veggiemonk/htw-demo-22/main.go
 
 RUN set -ex && \
     cd /go/src/github.com/veggiemonk/htw-demo-22 && \

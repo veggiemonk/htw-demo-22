@@ -1,8 +1,8 @@
 ## docker 
 
 ## run a container
-docker run -ti ubuntu bash
-docker run -ti --cpus="1.0" ubuntu bash 
+docker run -ti --rm ubuntu bash
+docker run -ti --rm --cpus="1.0" ubuntu bash
 
 ## install 7z
 apt update && apt install -y p7zip-full
